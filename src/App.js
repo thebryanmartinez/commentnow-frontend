@@ -1,9 +1,14 @@
+import { Provider } from 'react-redux';
 import './App.css';
+
+import store from './Store/index';
 import { Page } from './Components/Views/Page'
 
 function App() {
   return (
-    <Page/>
+    <Provider store={store}>
+      <Page/>
+    </Provider>
   );
 }
 
