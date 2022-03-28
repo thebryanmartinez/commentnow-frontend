@@ -16,9 +16,9 @@ const Input = (
   }
 ) => {
   return(
-    <section className={(['input', ...customClassName]).join(' ')}>
-      <label>{label}</label>
+    <section className={(['input-container', ...customClassName]).join(' ')}>
       <input
+        className='input'
         type={type}
         name={name}
         placeholder={placeholder}

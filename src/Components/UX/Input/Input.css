@@ -1,0 +1,36 @@
+.input-container{
+  display: grid;
+  place-items: center;
+}
+
+.input, .input::before, .input::after {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+}
+
+.input{
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  color: var(--color-black);
+  border-bottom: 2px solid var(--color-black);
+}
+
+.input::placeholder{
+  color: var(--color-black);
+  opacity: 0.20;
+}
+
+.input-error{
+  color: var(--secondary-red);
+  font-size: .875rem;
+}
+
+.input-info{
+  color: var(--color-black);
+  font-size: .875rem;
+}

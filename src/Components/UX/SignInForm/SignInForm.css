@@ -1,0 +1,26 @@
+.signinform{
+  background-color: var(--color-white);
+  margin: 6.25rem 2.8rem;
+  padding: 2.1875rem;
+  box-shadow: 5px 6px 10px 0px rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signinform > *{
+  margin: .9375rem 0rem;
+}
+
+.signinform-containers{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p{
+  color: var(--color-black);
+}
