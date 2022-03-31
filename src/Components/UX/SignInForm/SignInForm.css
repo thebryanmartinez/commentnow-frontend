@@ -24,3 +24,38 @@
 p{
   color: var(--color-black);
 }
+
+@media screen and (max-width: 1024px){
+  .image-container{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .signinform-desktop > *{
+    margin: 0rem;
+  }
+  
+  .signinform-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .image-container img{
+    width: 40%vw;
+    height: 100vh;
+  }
+
+  .signinform{
+    width: 100%;
+    margin: 1rem;
+  }
+}
+
+@media screen and (min-width: 1300px){
+  .signinform{
+    width: 100%;
+    margin: 5rem;
+  }
+}

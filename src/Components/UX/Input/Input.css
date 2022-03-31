@@ -34,3 +34,10 @@
   color: var(--color-black);
   font-size: .875rem;
 }
+
+/* Modo escritorio */
+@media screen and (min-width: 1200px){
+  .input{
+    font-size: 1.75rem;
+  }
+}
