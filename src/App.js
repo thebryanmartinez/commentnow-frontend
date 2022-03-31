@@ -1,9 +1,14 @@
+import { Provider } from 'react-redux';
 import './App.css';
-import { Page } from './Components/Views/Page'
+
+import store from './Store/index';
+import SignIn from './Components/Views/SignIn';
 
 function App() {
   return (
-    <Page/>
+    <Provider store={store}>
+      <SignIn />
+    </Provider>
   );
 }
 

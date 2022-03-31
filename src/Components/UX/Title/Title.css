@@ -1,0 +1,12 @@
+.title-container{
+  display: grid;
+  place-items: center;
+}
+
+.title{
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 2.25rem;
+  padding: 0px;
+  margin: 0px;
+}

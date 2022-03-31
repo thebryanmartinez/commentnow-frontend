@@ -1,0 +1,61 @@
+.signinform{
+  background-color: var(--color-white);
+  margin: 6.25rem 2.8rem;
+  padding: 2.1875rem;
+  box-shadow: 5px 6px 10px 0px rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signinform > *{
+  margin: .9375rem 0rem;
+}
+
+.signinform-containers{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p{
+  color: var(--color-black);
+}
+
+@media screen and (max-width: 1024px){
+  .image-container{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .signinform-desktop > *{
+    margin: 0rem;
+  }
+  
+  .signinform-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .image-container img{
+    width: 40%vw;
+    height: 100vh;
+  }
+
+  .signinform{
+    width: 100%;
+    margin: 1rem;
+  }
+}
+
+@media screen and (min-width: 1300px){
+  .signinform{
+    width: 100%;
+    margin: 5rem;
+  }
+}

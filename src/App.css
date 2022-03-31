@@ -1,0 +1,11 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+:root{
+  --primary-blue: #51B6D4;
+  --secondary-red: #DD888A;
+  --color-black: #3F3F4F;
+  --color-white: #F1F6F8;
+}
