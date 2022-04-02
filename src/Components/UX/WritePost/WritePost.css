@@ -1,0 +1,21 @@
+.write-post-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 1.25rem;
+
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.write-post-container > *{
+  margin: 1rem;
+}
+
+textarea{
+  outline: none;
+  resize: none;
+}
+
