@@ -5,7 +5,7 @@ import Input from '../Input/Input';
 import Title from '../Title/Title'
 import imageLogo from '../../../Images/CommentNowLogo/logo-completo-bg.png'
 
-export const loginform = ({ txtUsernameValue, txtPasswordValue, onChange: onChangeHandler, errorTxtUsername, errorTxtPassword }) => {
+export const LogInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onChangeHandler, errorTxtUsername, errorTxtPassword }) => {
   return (
     <div className='loginform-desktop'>
       <div className='image-container'>
@@ -43,4 +43,4 @@ export const loginform = ({ txtUsernameValue, txtPasswordValue, onChange: onChan
   )
 }
 
-export default loginform;
+export default LogInForm;

@@ -2,7 +2,7 @@ import React from 'react'
 import Page from '../UX/Page/Page'
 import LogInForm from '../UX/LogInForm/LogInForm'
 
-export const SignIn = () => {
+export const LogIn = () => {
   return (
     <Page>
       <LogInForm/>
@@ -10,4 +10,4 @@ export const SignIn = () => {
   )
 }
 
-export default SignIn;
+export default LogIn;
