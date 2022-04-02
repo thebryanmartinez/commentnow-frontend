@@ -1,0 +1,30 @@
+.header-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--color-white)!important;
+  justify-content: space-around;
+}
+
+.header-container p {
+  display: none;
+  color: var(--color-white);
+  margin-left: 1.25rem;
+}
+
+.posts--button, .user--button, .logout--button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  position: relative;
+  width: 50%;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px){
+  .header-container p {
+    display: block;
+  }
+}

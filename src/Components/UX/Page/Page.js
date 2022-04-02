@@ -1,8 +1,17 @@
 import './Page.css'
 
-const Page = ({ children }) => {
+const Page = ({ header: headerComponent, footer: footerComponent, children }) => {
+  const hasHeader = headerComponent && true;
+  const hasFooter = footerComponent && true;
+  let pageClassNames = ['page-container']
+  if(!hasHeader) pageClassNames.push('no-header');
+  if(!hasFooter) pageClassNames.push('no-footer')
   return (
-    <section className='page-container'>
+    <section className={pageClassNames.join(' ')}>
+      {hasHeader &&
+      <header className='page-header'>
+        {headerComponent}
+      </header>}
       <main>
         {children}
       </main>

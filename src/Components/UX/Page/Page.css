@@ -6,3 +6,18 @@
   flex-direction: column;
   background-color: var(--color-black);
 }
+
+.page-container main{
+  min-height: calc(100vh - 4 rem);
+}
+
+.page-container.no-header main {
+  min-height: calc(100vh - 4rem);
+}
+.page-container.no-header{
+  min-height: 100vh;
+}
+.page-header {
+  background-color: var(--primary-blue);
+  height:4rem;
+}
