@@ -1,7 +1,7 @@
-import SignIn from "./SignIn";
+import LogIn from "./LogIn";
 import { useState } from 'react'
 
-const SignInPage = () => {
+const LogInPage = () => {
 
   const [txtUsername, setTxtUsername] = useState('')
   const [txtPassword, setTxtPassword] = useState('')
@@ -19,7 +19,7 @@ const SignInPage = () => {
   }
 
   return (
-    <SignIn
+    <LogIn
       txtUsernameValue={txtUsername}
       txtPasswordValue={txtPassword}
       onChange={onChangeHandler}
@@ -29,4 +29,4 @@ const SignInPage = () => {
   )
 }
 
-export default SignInPage;
+export default LogInPage;

@@ -1,4 +1,4 @@
-.signinform{
+.loginform{
   background-color: var(--color-white);
   margin: 6.25rem 2.8rem;
   padding: 2.1875rem;
@@ -10,11 +10,11 @@
   flex-direction: column;
 }
 
-.signinform > *{
+.loginform > *{
   margin: .9375rem 0rem;
 }
 
-.signinform-containers{
+.loginform-containers{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,11 +32,11 @@ p{
 }
 
 @media screen and (min-width: 1024px){
-  .signinform-desktop > *{
+  .loginform-desktop > *{
     margin: 0rem;
   }
   
-  .signinform-desktop {
+  .loginform-desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -47,14 +47,14 @@ p{
     height: 100vh;
   }
 
-  .signinform{
+  .loginform{
     width: 100%;
     margin: 1rem;
   }
 }
 
 @media screen and (min-width: 1300px){
-  .signinform{
+  .loginform{
     width: 100%;
     margin: 5rem;
   }

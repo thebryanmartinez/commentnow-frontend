@@ -1,17 +1,17 @@
-import './SignInForm.css'
+import './LogInForm.css'
 import React from 'react'
 import { PrimaryButton, SecondaryButton } from '../Button/Button'
 import Input from '../Input/Input';
 import Title from '../Title/Title'
 import imageLogo from '../../../Images/CommentNowLogo/logo-completo-bg.png'
 
-export const SignInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onChangeHandler, errorTxtUsername, errorTxtPassword }) => {
+export const loginform = ({ txtUsernameValue, txtPasswordValue, onChange: onChangeHandler, errorTxtUsername, errorTxtPassword }) => {
   return (
-    <div className='signinform-desktop'>
+    <div className='loginform-desktop'>
       <div className='image-container'>
         <img src={imageLogo} alt="CommentNow Logo"></img>
       </div>
-      <div className='signinform'>
+      <div className='loginform'>
         <Title>CommentNow</Title>
         <Input
           type="text"
@@ -30,11 +30,11 @@ export const SignInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onCha
           info="Minimo 5 caracteres"
           onChange={onChangeHandler}
         />
-        <div className='signinform-containers'>
+        <div className='loginform-containers'>
           <PrimaryButton>Iniciar sesion</PrimaryButton>
           <a href=''><p>Olvidó su contraseña?</p></a>
         </div>
-        <div className='signinform-containers'>
+        <div className='loginform-containers'>
           <p>No tienes usuario?</p>
           <SecondaryButton>Crear cuenta</SecondaryButton>
         </div>
@@ -43,4 +43,4 @@ export const SignInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onCha
   )
 }
 
-export default SignInForm;
+export default loginform;
