@@ -38,7 +38,6 @@ export const SignInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onCha
           <p>No tienes usuario?</p>
           <SecondaryButton>Crear cuenta</SecondaryButton>
         </div>
-        <PrimaryButton>Archila</PrimaryButton>
       </div>
     </div>
   )
