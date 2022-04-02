@@ -21,6 +21,8 @@
   position: relative;
   width: 50%;
   cursor: pointer;
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 @media screen and (min-width: 1024px){
