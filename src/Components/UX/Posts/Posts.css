@@ -1,0 +1,18 @@
+.posts-container{
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 800px){
+  .posts-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .posts-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

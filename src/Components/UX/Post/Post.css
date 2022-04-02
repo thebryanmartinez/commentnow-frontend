@@ -1,0 +1,35 @@
+.post{
+  width: 18rem;
+  padding: 2rem 2rem 1rem;
+  box-shadow: 5px 6px 10px 0px rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  background-color: var(--color-white);
+}
+
+.post--username-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-name{
+  color: var(--primary-blue);
+  font-size: 1.125rem;
+}
+
+.post-username, .post--date{
+  color: grey;
+}
+
+.post--actions{
+  display: flex;
+  justify-content: space-around;
+}
+
+.post--actions-comments, .post--actions-likes{
+  display: flex;
+  align-items: center;
+  width: 3.125rem;
+  justify-content: space-around;
+  cursor: pointer;
+}
