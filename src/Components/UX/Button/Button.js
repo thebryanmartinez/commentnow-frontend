@@ -30,3 +30,5 @@ export const Button = ({ children, ...rest }) => {
     </BaseButton>
   )
 }
+
+export default{ PrimaryButton, SecondaryButton } 

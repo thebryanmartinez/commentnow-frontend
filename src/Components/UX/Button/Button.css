@@ -5,17 +5,17 @@ button {
   border: none;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
   font-weight: 700;
-  color: var(--color-white);
+  color: #F1F6F8;
   font-size: 1.125rem;
   cursor: pointer;
 }
 
 button.button-primary{
-  background-color: var(--primary-blue);
+  background-color:#51B6D4;
 }
 
 button.button-secondary{
-  background-color: var(--secondary-red); 
+  background-color:  #DD888A; 
 }
 
 @media screen and (min-width: 1300px){
