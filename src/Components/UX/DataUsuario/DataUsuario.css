@@ -1,0 +1,58 @@
+  .username-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  .info-user{
+    display: flex;
+    justify-content: left;
+    padding: 0.5rem;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    width: 94%;
+    margin: 1.5rem auto;
+  }
+
+  .User-names{
+    color: var(--primary-blue);
+    font-size: 3rem;
+   
+  }
+
+  .User-But{
+    display: flex;
+    justify-content:flex-end;
+    flex-direction: column;
+  }
+
+  .espacio{
+     margin: 0.3rem;
+  }
+
+  .Des-User{
+    position: relative;
+    font-size: 1.3rem;
+    justify-content: justify;
+    padding-right:30%;
+    margin:0;
+    bottom:1.5rem;
+    
+  }
+  .Birth-date{
+    color: grey;
+    margin-top: 0;
+  }
+  .username{
+    position: relative;
+    font-size: 1rem;  
+    margin:0;
+    bottom: 2.5rem;
+    
+  }
+  
+
+
+
+
