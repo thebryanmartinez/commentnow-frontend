@@ -1,10 +1,12 @@
-import { type } from "@testing-library/user-event/dist/type";
+import { setJWT } from '../../../Lib/apiClient'
 
 const defaultSecurity = {
   username: '',
   jwtToken: '',
   roles: [],
   _id: '',
+  errors: [],
+  // isLoading: false
 }
 
 export const securityReducer = (state = defaultSecurity, action) => {
@@ -12,15 +14,18 @@ export const securityReducer = (state = defaultSecurity, action) => {
   switch(type){
     case 'ON_SIGN_IN_LOADING':
       break;
-    case 'ON_SING_IN_SUCCESS':
+    case 'ON_SIGN_IN_SUCCESS':
       break;
-    case 'ON_SING_IN_ERROR':
+    case 'ON_SIGN_IN_ERROR':
       break;
     case 'ON_LOGIN LOADING':
       break;
     case 'ON_LOGIN_SUCCESS':
+      setJWT(payload.jwtToken)
+      return {...state, ...payload}
       break;
     case 'ON_LOGIN_ERROR':
+      return {...state, errors: payload.errors}
       break;
     default:
       return state;

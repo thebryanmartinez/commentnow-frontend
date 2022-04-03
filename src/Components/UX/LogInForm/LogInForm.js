@@ -5,7 +5,7 @@ import Input from '../Input/Input';
 import Title from '../Title/Title'
 import imageLogo from '../../../Images/CommentNowLogo/logo-completo-bg.png'
 
-export const LogInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onChangeHandler, errorTxtUsername, errorTxtPassword }) => {
+export const LogInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onChangeHandler, errorTxtUsername, errorTxtPassword, onConfirm: onConfirmClick, onCancel: onCancelClick }) => {
   return (
     <div className='loginform-desktop'>
       <div className='image-container'>
@@ -31,12 +31,12 @@ export const LogInForm = ({ txtUsernameValue, txtPasswordValue, onChange: onChan
           onChange={onChangeHandler}
         />
         <div className='loginform-containers'>
-          <PrimaryButton>Iniciar sesion</PrimaryButton>
+          <PrimaryButton onClick={onConfirmClick}>Iniciar sesion</PrimaryButton>
           <a href=''><p>Olvidó su contraseña?</p></a>
         </div>
         <div className='loginform-containers'>
           <p>No tienes usuario?</p>
-          <SecondaryButton>Crear cuenta</SecondaryButton>
+          <SecondaryButton onClick={onCancelClick}>Crear cuenta</SecondaryButton>
         </div>
       </div>
     </div>
