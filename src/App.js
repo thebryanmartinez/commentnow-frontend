@@ -1,8 +1,10 @@
+import './App.css';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import { PersistGate } from 'redux-persist/integration/react'
+import Private from './Components/UX/Private/Private'
 
-import store from './Store/index';
+import { store, persistor } from './Store/index';
 import LogIn from './Components/Views/LogInPage';
 import Posts from './Components/Views/Posts';
 import Usuario from './Components/Views/UsuarioPage';
@@ -11,14 +13,16 @@ import Registrar from './Components/Views/Registrar';
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-        <Route path="/login" element={<LogIn/>}></Route>
-        <Route path="/home" element={<Posts/>}></Route>
-        <Route path="/usuario" element={<Usuario/>}></Route>
-        <Route path="/registrar" element={<Registrar/>}></Route>
-        </Routes>
-      </BrowserRouter>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LogIn />}></Route>
+            <Route path="/home" element={<Private><Posts /></Private>}></Route>
+            <Route path="/usuario" element={<Usuario />}></Route>
+            <Route path="/registrar" element={<Registrar />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
   );
 }
