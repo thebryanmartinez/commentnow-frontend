@@ -1,7 +1,7 @@
 import './Header.css'
 import { useSelector } from 'react-redux'
 import { Home, LogOut, User } from 'react-feather'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 const Header = () => {
   return (
