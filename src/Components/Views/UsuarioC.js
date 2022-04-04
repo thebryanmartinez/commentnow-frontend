@@ -1,11 +1,12 @@
 
 import Page from "../UX/Page/Page";
+import Post from '../UX/Posts/Posts';
 import '../UX/DataUsuario/DataUsuario.css';
 
 import { PrimaryButton, SecondaryButton } from '../UX/Button/Button'
 
 const Usuario = (usuario)=>{
-console.log(usuario.usuario)
+
   return (
     <Page>
       <div className="info-user">
@@ -19,7 +20,8 @@ console.log(usuario.usuario)
       <p className="Birth-date">Cumpleaños: {usuario.usuario[0].birthdate}</p>
      
     </div>
-      
+    
+        
     </Page>
   );
 }
