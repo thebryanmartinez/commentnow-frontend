@@ -1,22 +1,21 @@
 import './Post.css';
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Heart, MessageSquare } from 'react-feather';
 
-export const Post = () => {
+export const Post = (props) => {
   return (
     <div className="post">
       <div className="post--username-container">
-        <div className="post-name">Bryan Martínez</div>
-        <div className="post-username">@thebryanmartinez</div>
+        <div className="post-name">@{props.username}</div>
       </div>
       <div className='post--info-container'>
-        <p>Lorem ipsum dolor sit ? Dolorem modi maxime veritatis? Aliquam, molestiae. asdfe asldkkfj als;dkfj asdlk asd;fsli isdafke sadf ;laskdjf brya nadlksjd</p>
+        <p>{props.contenido}</p>
       </div>
-      <p className="post--date">Publicado: 01/04/2022</p>
+      <p className="post--date">Publicado: {props.fecha}</p>
       <div className='post--actions'>
         <div className="post--actions-likes">
           <Heart fill='' />
-          <p>2</p>
+          <p>{props.likes}</p>
         </div>
         <div className="post--actions-comments">
           <MessageSquare />

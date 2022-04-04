@@ -6,7 +6,7 @@ import Private from './Components/UX/Private/Private'
 
 import { store, persistor } from './Store/index';
 import LogIn from './Components/Views/LogInPage';
-import Posts from './Components/Views/Posts';
+import Posts from './Components/Views/PostsPage';
 import Usuario from './Components/Views/UsuarioPage';
 import Registrar from './Components/Views/Registrar';
 

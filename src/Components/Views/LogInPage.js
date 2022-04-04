@@ -2,8 +2,10 @@ import LogIn from "./LogIn";
 import { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { publicAxios } from '../../Lib/apiClient'
+import { useNavigate } from "react-router-dom";
 
 const LogInPage = () => {
+  const routerNavigator = useNavigate()
   const dispatch = useDispatch();
   const { errors } = useSelector((state) => {return state.security})
   const [txtUsername, setTxtUsername] = useState('')
@@ -35,6 +37,7 @@ const LogInPage = () => {
       console.log('Login Request: ', data)
       const {jwt:jwtToken, user} = data.data
       dispatch({ type:'ON_LOGIN_SUCCESS', payload:{jwtToken, ...user}})
+      routerNavigator('/home') 
     } catch (error) {
       dispatch({type:'', payload:{errors:['Credenciales Incorrectas!']}})
       console.log('Error on Login Request: ', error)
