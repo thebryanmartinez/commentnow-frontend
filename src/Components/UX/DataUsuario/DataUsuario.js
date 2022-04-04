@@ -3,11 +3,15 @@ import React, { useState, useEffect } from 'react'
 import { PrimaryButton, SecondaryButton } from '../Button/Button'
 
 
-export const DataUsuario = () => {
+export const DataUsuario = (props) => {
+  if(props.usuario==null){
+    console.log("nulo");
+  }
+console.log(props.usuario.names);
   return (
     <div className="info-user">
       <div className="username-container">
-        <div className="User-names">Bryan Martínez <pre ></pre> <p className='username'>@thebryanmartinez</p> </div>
+        <div className="User-names">{props.names}<pre ></pre> <p className='username'>@thebryanmartinez</p> </div>
         <div className="User-But"><PrimaryButton>+ Seguir</PrimaryButton><pre className="espacio"></pre><SecondaryButton>Editar</SecondaryButton></div>
       </div>
       <div >
