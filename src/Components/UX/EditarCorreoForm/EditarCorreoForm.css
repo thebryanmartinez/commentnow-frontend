@@ -1,0 +1,65 @@
+.loginform{
+    background-color: var(--color-white);
+    margin: 6.25rem 2.8rem;
+    padding: 2.1875rem;
+    box-shadow: 5px 6px 10px 0px rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .loginform > *{
+    margin: .9375rem 0rem;
+  }
+  
+  .loginform-containers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  p{
+    color: var(--color-black);
+  }
+  
+  @media screen and (max-width: 1024px){
+    .image-container{
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 1024px){
+    .loginform-desktop > *{
+      margin: 0rem;
+    }
+    
+    .loginform-desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .image-container img{
+      width: 40%vw;
+      height: 100vh;
+    }
+  
+    .loginform{
+      width: 100%;
+      margin: 1rem;
+    }
+  }
+  
+  @media screen and (min-width: 1300px){
+    .loginform{
+      width: 100%;
+      margin: 5rem;
+    }
+  
+    p{
+      font-size: 1.1rem;
+    }
+  }

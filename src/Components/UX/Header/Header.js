@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   const { _id, roles } = useSelector((state) => state.security);
-  if (_id) {
+  if (true) {
     return (
       <div className='header-container'>
         <NavLink to='/home' className='posts--button'>

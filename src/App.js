@@ -8,7 +8,10 @@ import { store, persistor } from './Store/index';
 import LogIn from './Components/Views/LogInPage';
 import Posts from './Components/Views/PostsPage';
 import Usuario from './Components/Views/UsuarioPage';
-import Registrar from './Components/Views/Registrar';
+import Registrar from './Components/Views/RegistrarPage';
+import EditarCorreo from './Components/Views/EditarCorreoPage';
+import EditarUsuario from './Components/Views/EditarUsuarioPage';
+import EditarContra from './Components/Views/EditarContraPage';
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
             <Route path="/home" element={<Private><Posts /></Private>}></Route>
             <Route path="/usuario" element={<Usuario />}></Route>
             <Route path="/registrar" element={<Registrar />}></Route>
+            <Route path="/editarcorreo" element={<EditarCorreo />}></Route>
+            <Route path="/editarusuario" element={<EditarUsuario />}></Route>
+            <Route path="/editarcontrasena" element={<EditarContra />}></Route>
           </Routes>
         </BrowserRouter>
       </PersistGate>

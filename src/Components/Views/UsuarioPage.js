@@ -8,6 +8,7 @@ import Usuario from './UsuarioC';
 
 const UsuarioPage = ()=>{
   const dispatch = useDispatch();
+  
   useEffect(
     ()=>{
       const loadData = async ()=> {
@@ -24,12 +25,30 @@ const UsuarioPage = ()=>{
     }
     ,[]
   );
+
+  useEffect(
+    () => {
+      const loadData = async () => {
+        dispatch({type:'PUBLICACIONES_LOADING', payload:{}});
+        try {
+          const {data: {publicaciones,status}} = await privateAxios.get('/api/v1/publicaciones/byByUsername/Archila2112')
+          console.log(publicaciones);
+          dispatch({type:'PUBLICACIONES_SUCCESS', payload: {publicaciones}})
+        } catch (error) {
+          console.log(error)
+          dispatch({ type: 'PUBLICACIONES_FAILED', payload: {} })
+        }
+      }
+      loadData();
+    }
+    , []);
+  const { publicaciones,isLoadingpublicacion, errors2 } = useSelector(state => state.publicaciones);
   const { usuario,isLoading, errors } = useSelector(state=>state.usuario);
   return (
     <>
       {isLoading && (<Loading/>)}
-      
-      <Usuario usuario={usuario} />
+      {isLoadingpublicacion && (<Loading/>)}  
+      <Usuario usuario={usuario} publicaciones={publicaciones} />
     </>
   )
 }
