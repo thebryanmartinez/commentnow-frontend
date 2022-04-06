@@ -15,12 +15,8 @@ export const Posts = ({ publicaciones, onConfirm, onChange }) => {
     <div>
       <WritePost onConfirm={onConfirm} onChange={onChange}/>
       <div className="posts-container">
-      <Post/>
-      <Post/>
-     
+      {posts}
       </div>
-        
-
     </div>
   )
 }

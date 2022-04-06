@@ -23,7 +23,7 @@ const Input = (
         className='input'
         type={type}
         name={name}
-        placeholder="comments"
+        placeholder={placeholder}
         value={value}
         onChange={onChangeHandler}
         {...rest}
