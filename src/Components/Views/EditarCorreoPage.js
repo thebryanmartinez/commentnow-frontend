@@ -1,22 +1,22 @@
-import LogIn from "./LogIn";
+import EditarCorreo from "./EditarCorreo";
 import { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { publicAxios } from '../../Lib/apiClient'
 import { useNavigate } from "react-router-dom";
 
-const LogInPage = () => {
+const EditarCorreoPage = () => {
   const routerNavigator = useNavigate()
   const dispatch = useDispatch();
   const { errors } = useSelector((state) => {return state.security})
-  const [txtUsername, setTxtUsername] = useState('')
-  const [txtPassword, setTxtPassword] = useState('')
+  const [txtId, setTxtId] = useState('')
+  const [txtEmail, setTxtEmail] = useState('')
   const onChange = ({ target: {name, value}}) => {
     switch (name) {
-      case 'txtUsername':
-        setTxtUsername(value)
+      case 'txtId':
+        setTxtId(value)
         break
-      case 'txtPassword':
-        setTxtPassword(value)
+      case 'txtEmail':
+        setTxtEmail(value)
         break
       default:
         break
@@ -27,20 +27,19 @@ const LogInPage = () => {
     e.preventDefault()
     e.stopPropagation()
     try {
-      const data = await publicAxios.post(
-        '/api/v1/seguridad/login',
+      const data = await publicAxios.put(
+        '/api/v1/usuarios/updateemail/624bc2de391e6738a11d0398',
         {
-          username: txtUsername,
-          password: txtPassword
+          email: txtEmail
         }
       );
-      console.log('Login Request: ', data)
+      console.log('Editar Correo Request: ', data)
       const {jwt:jwtToken, user} = data.data
-      dispatch({ type:'ON_LOGIN_SUCCESS', payload:{jwtToken, ...user}})
+      dispatch({ type:'ON_EDITAR_CORREO_SUCCESS', payload:{jwtToken, ...user}})
       routerNavigator('/home') 
     } catch (error) {
       dispatch({type:'', payload:{errors:['Credenciales Incorrectas!']}})
-      console.log('Error on Login Request: ', error)
+      console.log('Error on Editar Correo Request: ', error)
     }
   }
 
@@ -51,12 +50,12 @@ const LogInPage = () => {
 
   return (
     <>
-      <LogIn
-        txtUsernameValue={txtUsername}
-        txtPasswordValue={txtPassword}
+      <EditarCorreo
+        txtIdValue={txtId}
+        txtEmailValue={txtEmail}
         onChangeHandler={onChange}
-        errorTxtUsername=''
-        errorTxtPassword={errors.length && errors.join(' ')}
+        errorTxtId=''
+        /*errorTxtPassword={errors.length && errors.join(' ')}*/
         onConfirmClick={onConfirm}
         onCancelClick={onCancel}
       />
@@ -64,4 +63,4 @@ const LogInPage = () => {
   )
 }
 
-export default LogInPage;
+export default EditarCorreoPage;

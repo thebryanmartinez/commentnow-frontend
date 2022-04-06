@@ -5,7 +5,7 @@ import Input from '../Input/Input';
 import Title from '../Title/Title'
 import imageLogo from '../../../Images/CommentNowLogo/logo-completo-bg.png'
 
-export const RegistrarForm = ({ txtNameValue, txtUsernameValue, txtPasswordValue, txtEmailValue, txtBirthDateValue, txtConfirmPasswordValue, txtDescriptionValue, onChange: onChangeHandler, errorTxtName, errorTxtUsername, errorTxtPassword, errorTxtEmail, errorTxtBirthDate, errorTxtConfirmPassword, errorTxtDescription }) => {
+export const RegistrarForm = ({ txtNameValue, txtUsernameValue, txtPasswordValue, txtEmailValue, txtBirthDateValue, txtConfirmPasswordValue, txtRecoveryQuestionValue, txtRecoveryAnswerValue, txtDescriptionValue, onChange: onChangeHandler, errorTxtName, errorTxtUsername, errorTxtPassword, errorTxtEmail, errorTxtBirthDate, errorTxtConfirmPassword, errorTxtDescription, errorTxtRecoveryQuestion, errorTxtRecoveryAnswer, onConfirm: onConfirmCrearCuenta, onCancel: onCancelarClick}) => {
   return (
     <div className='registrarform-desktop'>
       {/* <div className='image-container'>
@@ -31,19 +31,18 @@ export const RegistrarForm = ({ txtNameValue, txtUsernameValue, txtPasswordValue
         />
         <Input
           type="text"
-          name="txtPassword"
-          placeholder="Password"
-          value={txtPasswordValue}
-          error={errorTxtPassword}
-          info="Minimo 5 caracteres"
-          onChange={onChangeHandler}
-        />
-        <Input
-          type="text"
           name="txtEmail"
           placeholder="Email"
           value={txtEmailValue}
           error={errorTxtEmail}
+          onChange={onChangeHandler}
+        />
+        <Input
+          type="text"
+          name="txtDescription"
+          placeholder="Description"
+          value={txtDescriptionValue}
+          error={errorTxtDescription}
           onChange={onChangeHandler}
         />
         <Input
@@ -56,25 +55,35 @@ export const RegistrarForm = ({ txtNameValue, txtUsernameValue, txtPasswordValue
         />
         <Input
           type="text"
-          name="txtConfirmPassword"
-          placeholder="ConfirmPassword"
-          value={txtConfirmPasswordValue}
-          error={errorTxtConfirmPassword}
+          name="txtPassword"
+          placeholder="Password"
+          value={txtPasswordValue}
+          error={errorTxtPassword}
+          info="Minimo 5 caracteres"
           onChange={onChangeHandler}
         />
         <Input
           type="text"
-          name="txtDescription"
-          placeholder="Description"
-          value={txtDescriptionValue}
-          error={errorTxtDescription}
+          name="txtRecoveryQuestion"
+          placeholder="RecoveryQuestion"
+          value={txtRecoveryQuestionValue}
+          error={errorTxtRecoveryQuestion}
           onChange={onChangeHandler}
         />
+        <Input
+          type="text"
+          name="txtRecoveryAnswer"
+          placeholder="RecoveryAnswer"
+          value={txtRecoveryAnswerValue}
+          error={errorTxtRecoveryAnswer}
+          onChange={onChangeHandler}
+        />
+        
         <div className='registrarform-containers'>
-          <PrimaryButton>Crear Cuenta</PrimaryButton>
+          <PrimaryButton onClick={onConfirmCrearCuenta}>Crear Cuenta</PrimaryButton>
         </div>
         <div className='registrarform-containers'>
-          <SecondaryButton>Cancelar</SecondaryButton>
+          <SecondaryButton onClick={onCancelarClick}>Cancelar</SecondaryButton>
         </div>
       </div>
     </div>

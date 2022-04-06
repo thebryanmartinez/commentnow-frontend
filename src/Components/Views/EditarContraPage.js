@@ -1,22 +1,24 @@
-import LogIn from "./LogIn";
+import EditarContra from "./EditarContra";
 import { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { publicAxios } from '../../Lib/apiClient'
 import { useNavigate } from "react-router-dom";
 
-const LogInPage = () => {
+const EditarContraPage = () => {
   const routerNavigator = useNavigate()
   const dispatch = useDispatch();
   const { errors } = useSelector((state) => {return state.security})
-  const [txtUsername, setTxtUsername] = useState('')
-  const [txtPassword, setTxtPassword] = useState('')
+ 
+  const [txtRespuesta, setTxtRespuesta] = useState('Logan')
+  const [txtContra, setTxtContra] = useState('Roberto21')
   const onChange = ({ target: {name, value}}) => {
+
     switch (name) {
-      case 'txtUsername':
-        setTxtUsername(value)
+        case 'txtRespuesta':
+            setTxtRespuesta(value)
         break
-      case 'txtPassword':
-        setTxtPassword(value)
+        case 'txtContra':
+        setTxtContra(value)
         break
       default:
         break
@@ -26,21 +28,23 @@ const LogInPage = () => {
   const onConfirm = async (e) => {
     e.preventDefault()
     e.stopPropagation()
+
     try {
-      const data = await publicAxios.post(
-        '/api/v1/seguridad/login',
+      const data = await publicAxios.put(
+        '/api/v1/seguridad/recoverpassword',
         {
-          username: txtUsername,
-          password: txtPassword
+          username: "Roberto",
+          recoveryAnswer: txtRespuesta,
+          newPassword: txtContra
         }
       );
-      console.log('Login Request: ', data)
+      console.log('Editar Contraseña Request: ', data)
       const {jwt:jwtToken, user} = data.data
-      dispatch({ type:'ON_LOGIN_SUCCESS', payload:{jwtToken, ...user}})
+      dispatch({ type:'ON_EDITAR_CONTRASEÑA_SUCCESS', payload:{jwtToken, ...user}})
       routerNavigator('/home') 
     } catch (error) {
       dispatch({type:'', payload:{errors:['Credenciales Incorrectas!']}})
-      console.log('Error on Login Request: ', error)
+      console.log('Error on Editar Contraseña Request: ', error)
     }
   }
 
@@ -51,12 +55,11 @@ const LogInPage = () => {
 
   return (
     <>
-      <LogIn
-        txtUsernameValue={txtUsername}
-        txtPasswordValue={txtPassword}
+      <EditarContra
+        txtAnswerValue={txtRespuesta}
+        txtPasswordValue={txtContra}
         onChangeHandler={onChange}
-        errorTxtUsername=''
-        errorTxtPassword={errors.length && errors.join(' ')}
+        /*errorTxtPassword={errors.length && errors.join(' ')}*/
         onConfirmClick={onConfirm}
         onCancelClick={onCancel}
       />
@@ -64,4 +67,4 @@ const LogInPage = () => {
   )
 }
 
-export default LogInPage;
+export default EditarContraPage;

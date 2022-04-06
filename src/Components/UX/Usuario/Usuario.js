@@ -3,11 +3,12 @@ import Post from '../Post/Post'
 import DataUsuario from '../DataUsuario/DataUsuario'
 
 
-export const Usuario = () => {
+export const Usuario = (usuario) => {
+  
   return (
     <div>
        <div >
-        <DataUsuario />
+        <DataUsuario {...usuario}/>
        </div> 
       <div className="posts-container">
         <Post />

@@ -1,22 +1,18 @@
-import LogIn from "./LogIn";
+import EditarUsuario from "./EditarUsuario";
 import { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { publicAxios } from '../../Lib/apiClient'
 import { useNavigate } from "react-router-dom";
 
-const LogInPage = () => {
+const EditarUsuarioPage = () => {
   const routerNavigator = useNavigate()
   const dispatch = useDispatch();
   const { errors } = useSelector((state) => {return state.security})
-  const [txtUsername, setTxtUsername] = useState('')
-  const [txtPassword, setTxtPassword] = useState('')
+  const [txtUser, setTxtUser] = useState('')
   const onChange = ({ target: {name, value}}) => {
     switch (name) {
-      case 'txtUsername':
-        setTxtUsername(value)
-        break
-      case 'txtPassword':
-        setTxtPassword(value)
+      case 'txtUser':
+        setTxtUser(value)
         break
       default:
         break
@@ -27,20 +23,19 @@ const LogInPage = () => {
     e.preventDefault()
     e.stopPropagation()
     try {
-      const data = await publicAxios.post(
-        '/api/v1/seguridad/login',
+      const data = await publicAxios.put(
+        '/api/v1/usuarios/updateusername/624bc2de391e6738a11d0398',
         {
-          username: txtUsername,
-          password: txtPassword
+          username: txtUser
         }
       );
-      console.log('Login Request: ', data)
+      console.log('Editar Nombre de Usuario Request: ', data)
       const {jwt:jwtToken, user} = data.data
-      dispatch({ type:'ON_LOGIN_SUCCESS', payload:{jwtToken, ...user}})
+      dispatch({ type:'ON_EDITAR_NOMBRE_USUARIO_SUCCESS', payload:{jwtToken, ...user}})
       routerNavigator('/home') 
     } catch (error) {
       dispatch({type:'', payload:{errors:['Credenciales Incorrectas!']}})
-      console.log('Error on Login Request: ', error)
+      console.log('Error on Editar Nombre de Usuario Request: ', error)
     }
   }
 
@@ -51,12 +46,10 @@ const LogInPage = () => {
 
   return (
     <>
-      <LogIn
-        txtUsernameValue={txtUsername}
-        txtPasswordValue={txtPassword}
+      <EditarUsuario
+        txtUserValue={txtUser}
         onChangeHandler={onChange}
-        errorTxtUsername=''
-        errorTxtPassword={errors.length && errors.join(' ')}
+        /*errorTxtPassword={errors.length && errors.join(' ')}*/
         onConfirmClick={onConfirm}
         onCancelClick={onCancel}
       />
@@ -64,4 +57,4 @@ const LogInPage = () => {
   )
 }
 
-export default LogInPage;
+export default EditarUsuarioPage;

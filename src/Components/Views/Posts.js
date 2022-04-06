@@ -3,10 +3,10 @@ import Page from '../UX/Page/Page'
 import Posts from '../UX/Posts/Posts'
 import Header from '../UX/Header/Header'
 
-export const PostsPage = () => {
+export const PostsPage = ({publicaciones}) => {
   return (
     <Page header={<Header/>}>
-      <Posts/>
+      <Posts publicaciones={publicaciones}/>
     </Page>
   )
 }
