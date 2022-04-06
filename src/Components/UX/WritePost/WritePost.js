@@ -1,13 +1,19 @@
 import './WritePost.css'
 import { PrimaryButton } from '../Button/Button'
+import Input from '../Input/Input'
 
-
-const WritePost = () => {
+const WritePost = ({txtWritePostValue, onChange: onChangeHandler, onConfirm: onConfirmClick}) => {
   return (
     <div className="write-post-container">
-      <textarea name="writePost" id="writePost" placeholder="Que tiene en mente hoy?" cols="30" rows="5" maxLength="150"></textarea>
+      <Input
+          type="text"
+          name="txtWritePost"
+          placeholder="Que tiene en mente hoy?"
+          value={txtWritePostValue}
+          onChange={onChangeHandler}
+        />
       <div>
-        <PrimaryButton>Publicar</PrimaryButton>
+        <PrimaryButton onClick={onConfirmClick}>Publicar</PrimaryButton>
       </div>
     </div>
   )

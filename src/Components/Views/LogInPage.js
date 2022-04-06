@@ -39,7 +39,7 @@ const LogInPage = () => {
       dispatch({ type:'ON_LOGIN_SUCCESS', payload:{jwtToken, ...user}})
       routerNavigator('/home') 
     } catch (error) {
-      dispatch({type:'', payload:{errors:['Credenciales Incorrectas!']}})
+      dispatch({type:'ON_LOGIN_FAILED', payload:{errors:['Credenciales Incorrectas!']}})
       console.log('Error on Login Request: ', error)
     }
   }
