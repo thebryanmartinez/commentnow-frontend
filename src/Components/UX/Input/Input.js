@@ -15,13 +15,15 @@ const Input = (
     ...rest
   }
 ) => {
+  
   return(
     <section className={(['input-container', ...customClassName]).join(' ')}>
+      
       <input
         className='input'
         type={type}
         name={name}
-        placeholder={placeholder}
+        placeholder="comments"
         value={value}
         onChange={onChangeHandler}
         {...rest}
@@ -33,8 +35,12 @@ const Input = (
         hasError && <span className='input-error'>{error}</span>
       }
     </section>
+  
   )
-}
+    }
+    
+
+
 
 // Input.prototype = {}
 export default Input

@@ -2,9 +2,12 @@ import './Header.css'
 import { useSelector } from 'react-redux'
 import { Home, LogOut, User } from 'react-feather'
 import { NavLink} from 'react-router-dom'
+import { render } from '@testing-library/react'
 
 const Header = () => {
+  
   return (
+    
     <div className='header-container'>
       <NavLink to='/home' className='posts--button'>
         <Home size={36}></Home>
@@ -19,7 +22,9 @@ const Header = () => {
         <p>Logout</p>
       </div>
     </div>
+    
   )
 }
+
 
 export default Header;
