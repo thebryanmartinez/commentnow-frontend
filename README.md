@@ -1,20 +1,34 @@
-# Aplicación Web CommentNow
-Esta es una aplicación web elaborada para la clase de Seminario - Taller de Software. Este proyecto fue elaborado por un equipo de cinco personas lideradas por mí. Esta aplicación web es una red social sencilla destinada para que los usuarios puedan compartir información y anécdotas por medio de publicaciones. 
 
-## Descripción del proyecto
-Esta aplicación web fue elaborada con JavaScript y React. Al igual que se utilizó Storybooks para la documentación de componentes de React.
+![Commentnow banner](commentnow-app-banner.png)
 
-Para el funcionamiento de la aplicación web, esta tiene que estar conectada con una API del mismo nombre realizada por este mismo equipo. 
-Aquí está el repositorio de la API:
-- Aplicación web CommentNow: https://github.com/Bryanmartz972/commentnow-backend.git
+![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+![Redux](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white)
 
-## Caracteristicas
-- Inicio de sesión y creación de cuenta
-- Fetch con API
-- Utilización de Redux
+# CommentNow Web App
+This is an API made for the Seminar - Software Workshop class. This project was developed by a team of five people led by me. This API was made for a simple social network that any user could use from their web browser.
+## Description
 
-## Autores
-El equipo que me ayudo a elaborar este proyecto son compañeros de la misma universidad para la misma clase. Estos son los perfiles de GitHub del equipo (incluyéndome):
+This web application was built with JavaScript and React. Just like Storybooks was used for React component documentation.
+
+For the web application to work, it has to be connected to an API of the same name made by this same team. Here is the API repository:
+- [Commentnow API](https://github.com/Bryanmartz972/commentnow-backend.git)
+## Features
+
+- 👤 Login and Signup
+- 📲 API Fetching
+- 📝 Creation of posts
+- ❤️ Liking posts
+## Tech Stack
+
+- ⚛️ ReactJS
+- 🛒 Redux
+
+
+
+## Authors
+
+Here are the GitHub profiles of the team members (including me) who made this web app a reality:
 
 - [@Bryanmartz972](https://github.com/Bryanmartz972) 
 - [@Archila21](https://github.com/Archila21)
